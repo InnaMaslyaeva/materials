@@ -24,7 +24,7 @@ plt.hlines(x, x1, x2,
            linewidth=10  
            )
 
-plt.title('Grant diagram', fontsize=14)
+plt.title('Gant diagram', fontsize=14)
 plt.xlabel('x', fontsize=12)
 plt.ylabel('y', fontsize=12)
 plt.grid(True)
