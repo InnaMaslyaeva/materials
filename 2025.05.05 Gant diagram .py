@@ -1,6 +1,7 @@
 # Gant diagram
 
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 # Read data from file into variables
@@ -11,22 +12,27 @@ y, x1, x2 = np.loadtxt('data1.txt', unpack=True)
 print(f'{len(x1)=} {x1=} ')
 
 plt.figure(figsize=(8,5))
-# Map value to color
-#color_mapper = np.vectorize(lambda x: {0: 'red', 1: 'blue'}.get(x))
-# Plot a line for every line of data in your file
-#plt.hlines(y, x1, x2, colors=color_mapper(c))
+mpl.style.use('seaborn-v0_8')
+
 
 plt.hlines(x, x1, x2,
-           color='blue',
-           label='graph1',
+           color='royalblue',
+           label='Stages',
            #data=x1,
            linestyles = 'solid',
            linewidth=10  
            )
 
-plt.title('Gant diagram', fontsize=14)
-plt.xlabel('x', fontsize=12)
-plt.ylabel('y', fontsize=12)
-plt.grid(True)
-plt.legend()
+plt.title('Project stages - Gant diagram',
+          fontsize=14,
+          loc='left')
+plt.xlabel('x-axis, msec', fontsize=12)
+plt.ylabel('y-axis', fontsize=12)
+plt.grid(True,
+         linestyle="--",
+         alpha=0.4,
+         c='darkgray',
+         zorder=1)
+plt.legend(loc='upper left')
+plt.tight_layout()
 plt.show()
