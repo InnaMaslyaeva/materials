@@ -13,29 +13,6 @@ def sorting1_bubble(a):
         print(f'result: {a=}\n')
     return a    
 
-def sorting2_election(a):
-    # 2 сортировка выбором
-    for i1 in range(0, len(a)):
-        print(f'{i1=} step: -> {a[i1]=}')
-        for i2 in range(i1+1, len(a)):            
-            print(a[i1], a[i2], end=' -> ')
-            if a[i1] > a[i2]:
-                a[i1], a[i2] = a[i2], a[i1]
-            print(a[i1], a[i2])    
-        print(f'result: {a=}\n')
-    return a 
-
-def sorting3_insertion(a):
-    # 3 сортировка вставками    
-    for i1 in range(0, len(a)):
-        print('i1=', i1, '->', a[i1])
-        for i2 in range(0, i1): # len(a)): #
-            print(a[i1], a[i2], end=' -> ')
-            if a[i1] < a[i2]:
-                a[i1], a[i2] = a[i2], a[i1]
-            print(a[i1], a[i2])    
-        print('a=', a)
-    return a    
 
 def sorting4_heap(a):
     # 4 пирамидальная сортировка
@@ -73,10 +50,10 @@ print(f' original list: {a=}')
 #a2 = sorted(a, reverse = True)
 #print(f'{a1=} <-> {a2=}')   
 
-#sorting1_bubble(a)
+sorting1_bubble(a)
 #sorting2_election(a)
 #sorting3_insertion(a)
-sorting4_heap(a)
+#sorting4_heap(a)
 #sorting5_min_in_array(a)
 
 
